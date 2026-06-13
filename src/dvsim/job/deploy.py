@@ -789,7 +789,7 @@ class RunTest(Deploy):
             if RunTest.fixed_seed is not None:
                 return RunTest.fixed_seed
             for _i in range(1000):
-                seed = random.getrandbits(256)
+                seed = random.getrandbits(32)
                 RunTest.seeds.append(seed)
         return RunTest.seeds.pop(0)
 
