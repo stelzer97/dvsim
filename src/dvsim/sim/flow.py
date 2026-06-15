@@ -113,7 +113,9 @@ class SimCfg(FlowCfg):
             self.en_build_modes.append("gui")
         if args.gui_debug:
             self.en_build_modes.append("gui_debug")
-        if args.waves is not None:
+        if args.gui or args.gui_debug:
+            pass  # Don't add waves_off in GUI mode
+        elif args.waves is not None:
             self.en_build_modes.append("waves")
         else:
             self.en_build_modes.append("waves_off")
